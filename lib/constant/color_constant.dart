@@ -6,4 +6,6 @@ class ColorConstant{
   static Color black = const Color(0xFF000000);
   static Color gray = const Color(0xFF8C8C8C);
   static Color iconColor = const Color(0xFF2B6AD0);
+  static Color textboldColor = const Color(0xFF1B2430);
 }
+

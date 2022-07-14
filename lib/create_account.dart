@@ -67,7 +67,7 @@ class _CreateAccountState extends State<CreateAccount> with WidgetsBindingObserv
                     Text(StringConstant.createaccount,
                         style: TextStyle(
                           fontSize: 15,
-                          color: ColorConstant.gray,
+                          color: ColorConstant.textboldColor,
                         )
                     ),
                     const SizedBox(height: 20),
@@ -94,10 +94,10 @@ class _CreateAccountState extends State<CreateAccount> with WidgetsBindingObserv
                               child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Text(item[currentIndex]['title'],
-                                    style: const TextStyle(
+                                    style:  TextStyle(
                                         fontSize: 25,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.black
+                                        color: ColorConstant.textboldColor
                                     ),),
                                   const SizedBox(height: 30),
                                   ClipRRect(borderRadius: BorderRadius.circular(10),
@@ -108,9 +108,10 @@ class _CreateAccountState extends State<CreateAccount> with WidgetsBindingObserv
                                   ),
                                   const SizedBox(height: 20),
                                   Text(item[currentIndex]['subtitle'],textAlign: TextAlign.center,
-                                    style: const TextStyle(
+                                    style:  TextStyle(
                                       fontSize: 15,
                                       fontWeight: FontWeight.w500,
+                                        color: ColorConstant.iconColor,
                                     ),),
                                 ],
                               ),
@@ -137,19 +138,25 @@ class _CreateAccountState extends State<CreateAccount> with WidgetsBindingObserv
                               borderRadius: BorderRadius.circular(10),
                               color: ColorConstant.iconColor
                           ),
-                              child: Center(child: Text(StringConstant.createaccount))),
+                              child: Center(child: Text(StringConstant.createaccount,style: TextStyle(
+                                color: ColorConstant.white
+                              ),))),
                         ),
                       ): Row(
                         children: [
                           InkWell(onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
                           },
-                              child: Text(StringConstant.skip)),
+                              child: Text(StringConstant.skip,style: TextStyle(
+                                color: ColorConstant.iconColor
+                              ),)),
                           const Spacer(),
                           InkWell(onTap: () {
                             Navigator.push(context, MaterialPageRoute(builder: (context) => const LoginYourAccount()));
                           },
-                              child: Text(StringConstant.next))
+                              child: Text(StringConstant.next,style: TextStyle(
+                                color: ColorConstant.iconColor
+                              ),))
                         ],
                       ),
                     )

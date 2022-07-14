@@ -44,7 +44,7 @@ class _LoginYourAccountState extends State<LoginYourAccount> {
                 Text(StringConstant.loginaccount,
                     style: TextStyle(
                       fontSize: 15,
-                      color: ColorConstant.gray,
+                      color: ColorConstant.textboldColor,
                     )
                 ),
                 const SizedBox(height: 20),
@@ -71,10 +71,10 @@ class _LoginYourAccountState extends State<LoginYourAccount> {
                           child: Column(crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(item[currentIndex]['title'],
-                                style: const TextStyle(
+                                style: TextStyle(
                                     fontSize: 25,
                                     fontWeight: FontWeight.bold,
-                                    color: Colors.black
+                                    color: ColorConstant.textboldColor
                                 ),),
                               const SizedBox(height: 30),
                               ClipRRect(borderRadius: BorderRadius.circular(10),
@@ -85,9 +85,10 @@ class _LoginYourAccountState extends State<LoginYourAccount> {
                               ),
                               const SizedBox(height: 20),
                               Text(item[currentIndex]['subtitle'],textAlign: TextAlign.center,
-                                style: const TextStyle(
+                                style: TextStyle(
                                   fontSize: 15,
                                   fontWeight: FontWeight.w500,
+                                    color: ColorConstant.iconColor
                                 ),),
 
                             ],
@@ -115,19 +116,25 @@ class _LoginYourAccountState extends State<LoginYourAccount> {
                         borderRadius: BorderRadius.circular(10),
                         color: ColorConstant.iconColor
                       ),
-                          child: Center(child: Text(StringConstant.getstart))),
+                          child: Center(child: Text(StringConstant.getstart,style: TextStyle(
+                            color: ColorConstant.white
+                          ),))),
                     ),
                   ):Row(
                     children: [
                       InkWell(onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
                         },
-                          child: Text(StringConstant.skip)),
+                          child: Text(StringConstant.skip,style: TextStyle(
+                            color: ColorConstant.iconColor
+                          ),)),
                       const Spacer(),
                       InkWell(onTap: () {
                         Navigator.push(context, MaterialPageRoute(builder: (context) => const SignInScreen()));
                         },
-                          child: Text(StringConstant.next))
+                          child: Text(StringConstant.next,style: TextStyle(
+                            color: ColorConstant.iconColor
+                          ),))
                     ],
                   ))
               ],
