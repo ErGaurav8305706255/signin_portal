@@ -13,7 +13,28 @@ class CreateAccount extends StatefulWidget {
   State<CreateAccount> createState() => _CreateAccountState();
 }
 
-class _CreateAccountState extends State<CreateAccount> {
+class _CreateAccountState extends State<CreateAccount> with WidgetsBindingObserver{
+
+  late AppLifecycleState _appLifecycleState;
+
+  @override
+  void initState(){
+    super.initState();
+    WidgetsBinding.instance?.addObserver(this);
+  }
+  @override
+  void dispose(){
+    WidgetsBinding.instance?.removeObserver(this);
+    super.dispose();
+  }
+  @override
+  void didChangeAppLifecycleState(AppLifecycleState state){
+    setState(() {
+      _appLifecycleState = state;
+      print("BottomNavigatorScreen State: $_appLifecycleState");
+    });
+  }
+
 
   int currentIndex = 0;
   final List item=[
